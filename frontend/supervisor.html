@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasbor Supervisor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="welcome-message">
+                Selamat Datang, <span id="userName">...</span>!
+            </div>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h2>Persetujuan Absensi Tim</h2>
+            <p>Daftar pengajuan yang perlu ditinjau oleh Anda:</p>
+            <table id="supervisorRequestTable">
+                <thead>
+                    <tr>
+                        <th>Karyawan</th>
+                        <th>Tipe</th>
+                        <th>Tanggal</th>
+                        <th>Keterangan</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="text-align: center;">Memuat data pengajuan...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script src="supervisor.js"></script>
+</body>
+</html>

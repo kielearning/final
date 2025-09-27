@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasbor Karyawan</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="welcome-message">
+                Selamat Datang, <span id="userName">...</span>!
+            </div>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="fa-solid fa-calendar-days"></i></div>
+                <div class="stat-info">
+                    <p>Sisa Cuti Tahunan</p>
+                    <h2 id="leaveBalance">...</h2>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="fa-solid fa-calendar-check"></i></div>
+                <div class="stat-info">
+                    <p>Cuti Telah Digunakan</p>
+                    <h2 id="leaveTaken">...</h2>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon yellow"><i class="fa-solid fa-hourglass-half"></i></div>
+                <div class="stat-info">
+                    <p>Menunggu Persetujuan</p>
+                    <h2 id="leavePending">...</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <div class="card layout-main">
+                <h2>Riwayat Pengajuan Saya</h2>
+                <table id="employeeHistoryTable">
+                    <thead>
+                        <tr>
+                            <th>Tipe</th>
+                            <th>Tanggal</th>
+                            <th>Durasi</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4" style="text-align: center;">Memuat data riwayat...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card layout-sidebar">
+                <h2>Ajukan Izin/Cuti Baru</h2>
+                <form id="leaveRequestForm">
+                    <div class="form-group">
+                        <label for="requestType">Tipe Pengajuan</label>
+                        <select id="requestType" required>
+                            <option value="cuti">Cuti</option>
+                            <option value="sakit">Sakit</option>
+                            <option value="izin">Izin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Tanggal Mulai</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">Tanggal Selesai</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Keterangan</label>
+                        <textarea id="reason" rows="4" placeholder="Contoh: Keperluan keluarga..." required></textarea>
+                    </div>
+                    <div id="notification" class="notification"></div>
+                    <button type="submit" class="btn-primary">Kirim Pengajuan</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="karyawan.js"></script>
+</body>
+</html>
